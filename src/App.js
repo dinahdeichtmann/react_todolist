@@ -30,6 +30,17 @@ function App() {
     console.log("APP: updated tasks", updatedTasks);
   }
 
+  function editTask(id, edit) {
+    // if (edit.newText.trim() === "") {
+    //   return;
+    // }
+
+    setTasks((uneditedTasks) =>
+      uneditedTasks.map((task) => (task.id === id ? edit : task))
+    );
+    console.log("APP: edited tasks", tasks);
+  }
+
   function deleteTask(id) {
     const keptTasks = tasks.filter((task) => task.id !== id);
     setTasks(keptTasks);
@@ -43,6 +54,7 @@ function App() {
       <TaskList
         tasks={tasks}
         completeTask={completeTask}
+        editTask={editTask}
         deleteTask={deleteTask}
       />
     </>

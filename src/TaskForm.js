@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 function TaskForm({ addTask }) {
   const [input, setInput] = useState("");
+
+  const inputRef = useRef(null);
+  useEffect(() => {
+    inputRef.current.focus();
+  });
 
   function handleSubmit(e, task) {
     e.preventDefault();
@@ -25,6 +30,7 @@ function TaskForm({ addTask }) {
         onChange={handleChange}
         value={input}
         placeholder="Add to the list"
+        ref={inputRef}
         required
       ></input>
       <button>Add task</button>
