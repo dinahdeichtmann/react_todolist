@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import Form from "./Form";
+import TaskForm from "./Form";
 import "./App.css";
 
 function App() {
@@ -15,13 +15,12 @@ function App() {
     setTasks(taskList);
 
     console.log(tasks);
-    return tasks;
   }
 
   return (
     <>
       <h1>What's on your to do list today?</h1>
-      <Form onSubmit={addTask} />
+      <TaskForm addTask={addTask} />
     </>
   );
 }

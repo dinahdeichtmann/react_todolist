@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Form() {
+function TaskForm({ addTask }) {
   const [input, setInput] = useState("");
 
   function handleSubmit(e, task) {
@@ -12,8 +12,7 @@ function Form() {
     };
 
     setInput("");
-
-    return task;
+    addTask(task);
   }
 
   function handleChange(e) {
@@ -33,4 +32,4 @@ function Form() {
   );
 }
 
-export default Form;
+export default TaskForm;
