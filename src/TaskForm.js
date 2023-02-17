@@ -7,7 +7,7 @@ function TaskForm({ addTask }) {
     e.preventDefault();
 
     task = {
-      id: Math.floor(Math.random * 10000),
+      id: Math.floor(Math.random() * 10000),
       text: input,
     };
 
