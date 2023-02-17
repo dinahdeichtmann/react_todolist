@@ -20,14 +20,24 @@ function TaskList({ tasks, completeTask, editTask, deleteTask }) {
   }
 
   return tasks.map((task, index) => (
-    <li key={index}>
+    <li
+      key={index}
+      className={task.completed ? "todo-row complete" : "todo-row"}
+    >
       <div key={task.id} onClick={() => completeTask(task.id)}>
         {task.text}
       </div>
-      <button onClick={() => deleteTask(task.id)}>Delete</button>
-      <button onClick={() => setEdit({ newId: task.id, newText: task.text })}>
-        Edit
-      </button>
+      <span className="icons">
+        <button onClick={() => deleteTask(task.id)} className="delete-icon">
+          Delete
+        </button>
+        <button
+          onClick={() => setEdit({ newId: task.id, newText: task.text })}
+          className="edit-icon"
+        >
+          Edit
+        </button>
+      </span>
     </li>
   ));
 }

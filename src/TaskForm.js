@@ -25,15 +25,16 @@ function TaskForm({ addTask }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="todo-form">
       <input
         onChange={handleChange}
         value={input}
         placeholder="Add to the list"
         ref={inputRef}
+        className="todo-input"
         required
       ></input>
-      <button>Add task</button>
+      <button className="todo-button">Add task</button>
     </form>
   );
 }

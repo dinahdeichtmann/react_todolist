@@ -31,9 +31,9 @@ function App() {
   }
 
   function editTask(id, edit) {
-    // if (edit.newText.trim() === "") {
-    //   return;
-    // }
+    if (edit.newText.trim() === "") {
+      return;
+    }
 
     setTasks((uneditedTasks) =>
       uneditedTasks.map((task) => (task.id === id ? edit : task))
